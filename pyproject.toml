@@ -5,7 +5,7 @@ description = "An async wrapper for https://pypi.org/projects/dog.py which cover
 authors = ["ToxicKidz <78174417+ToxicKidz@users.noreply.github.com>"]
 license = "MIT"
 packages = [
-    { include  = "dog" }
+    { include  = "aiodog" }
 ]
 
 [tool.poetry.dependencies]
