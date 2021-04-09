@@ -38,6 +38,16 @@ class Client:
     post = partialmethod(request, 'POST')
     delete = partialmethod(request, 'DELETE')
 
+    async def __aenter__(self):
+        return self
+    
+    async def __aexit__(self, exc_type, exc_value, exc_tb):
+        await self.close()
+    
+    async def close(self):
+        if self._session is not None:
+            await self._session.close()
+
     async def get_breeds(
         self,
         attach_breed: Optional[int] = None,
