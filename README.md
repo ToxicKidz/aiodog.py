@@ -31,7 +31,7 @@ You can also use `async with`.
 
 ```py
 async def main():
-    async with Client(TOKEN) as client
+    async with Client(TOKEN) as client:
         images = await client.get_images()
         image = images[0]
 
